@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Card() {
   const [user, setUser] = React.useState({});
@@ -54,9 +55,30 @@ export default function Card() {
             <h2>Following {user.following}</h2>
           </div>
           <div className="card-bottom">
-            <h2>{user.location}</h2>
-            <h2>{user.blog}</h2>
-            <h2>{user.twitter_username}</h2>
+            <h2>
+              <FontAwesomeIcon
+                icon="fa-solid fa-location-dot"
+                pull="left"
+                className="icon"
+              />
+              {user.location}
+            </h2>
+            <h2>
+              <FontAwesomeIcon
+                icon="fa-solid fa-link"
+                pull="left"
+                className="icon"
+              />
+              {user.blog}
+            </h2>
+            <h2>
+              <FontAwesomeIcon
+                icon="fa-brands fa-twitter"
+                pull="left"
+                className="icon"
+              />
+              @{user.twitter_username}
+            </h2>
           </div>
         </div>
       )}

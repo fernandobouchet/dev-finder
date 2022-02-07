@@ -43,6 +43,16 @@ form {
   gap: 1rem;
 }
 
+.card-bottom {
+  text-align: initial;
+}
+
+.icon {
+  position: relative;
+  bottom: 5px;
+  right: 5px;
+}
+
 .card-center {
   gap: 1.5rem;
   background-color: #161b22;
