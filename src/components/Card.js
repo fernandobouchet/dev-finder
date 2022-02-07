@@ -4,19 +4,19 @@ import "./Card.css";
 export default function Card() {
   const [user, setUser] = React.useState({});
 
-  async function getInfo() {
-    const user = document.getElementById("search-input").value;
-    const res = await fetch(`https://api.github.com/users/${user}`);
+  async function getInfo(userName) {
+    const res = await fetch(`https://api.github.com/users/${userName}`);
     const data = await res.json();
     setUser(data);
   }
 
   function handleSearch(e) {
+    const userName = document.getElementById("search-input").value;
+    console.log(e.target.value);
     e.preventDefault();
-    getInfo();
+    getInfo(userName);
   }
 
-  console.log(user);
   return (
     <>
       <header className="header">
@@ -26,7 +26,7 @@ export default function Card() {
         <input
           id="search-input"
           type="input"
-          name="search-input"
+          name="button-input"
           placeholder="Github Username"
           autoComplete="off"
         ></input>
@@ -42,7 +42,7 @@ export default function Card() {
             </div>
             <div>
               <h1>{user.name}</h1>
-              <a href={user.html_url}>
+              <a href={user.html_url} target="_blank" rel="noreferrer">
                 <h2>@{user.login}</h2>
               </a>
               <h2>Joined {user.created_at}</h2>

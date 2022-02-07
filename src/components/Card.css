@@ -81,3 +81,8 @@ h1 {
   height: 2rem;
   justify-content: center;
 }
+
+a {
+  text-decoration: none;
+  color: #58a6ff;
+}
