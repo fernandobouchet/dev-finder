@@ -11,6 +11,12 @@ export default function Card() {
     setUser(data);
   }
 
+  function handleSearch(e) {
+    e.preventDefault();
+    getInfo();
+  }
+
+  console.log(user);
   return (
     <>
       <header className="header">
@@ -19,12 +25,12 @@ export default function Card() {
       <form id="form">
         <input
           id="search-input"
-          type="search"
+          type="input"
           name="search-input"
           placeholder="Github Username"
           autoComplete="off"
         ></input>
-        <button type="button" id="button-input" onClick={getInfo}>
+        <button type="submit" id="button-input" onClick={handleSearch}>
           Search
         </button>
       </form>
