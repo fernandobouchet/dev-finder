@@ -2,57 +2,30 @@ import React from "react";
 import "./Card.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Card() {
-  const [user, setUser] = React.useState({});
-
-  async function getInfo(userName) {
-    const res = await fetch(`https://api.github.com/users/${userName}`);
-    const data = await res.json();
-    setUser(data);
-  }
-
-  function handleSearch(e) {
-    const userName = document.getElementById("search-input").value;
-    console.log(e.target.value);
-    e.preventDefault();
-    getInfo(userName);
-  }
-
+export default function Card(props) {
   return (
     <>
-      <header className="header">
-        <h1>devfinder</h1>
-      </header>
-      <form id="form">
-        <input
-          id="search-input"
-          type="input"
-          name="button-input"
-          placeholder="Github Username"
-          autoComplete="off"
-        ></input>
-        <button type="submit" id="button-input" onClick={handleSearch}>
-          Search
-        </button>
-      </form>
-      {user.name && (
+      {props.info !== undefined && (
         <div className="card-container">
           <div className="card-top">
             <div className="avatar-image-container">
-              <img src={user.avatar_url} alt="Github user Avatar"></img>
+              <img
+                src={props.info.avatar_url}
+                alt="Github props.info Avatar"
+              ></img>
             </div>
             <div>
-              <h1>{user.name}</h1>
-              <a href={user.html_url} target="_blank" rel="noreferrer">
-                <h2>@{user.login}</h2>
+              <h1>{props.info.name}</h1>
+              <a href={props.info.html_url} target="_blank" rel="noreferrer">
+                <h2>@{props.info.login}</h2>
               </a>
-              <h2>Joined {user.created_at}</h2>
+              <h2>Joined {props.info.created_at}</h2>
             </div>
           </div>
           <div className="card-center">
-            <h2>Repos {user.public_repos}</h2>
-            <h2>Followers {user.followers}</h2>
-            <h2>Following {user.following}</h2>
+            <h2>Repos {props.info.public_repos}</h2>
+            <h2>Followers {props.info.followers}</h2>
+            <h2>Following {props.info.following}</h2>
           </div>
           <div className="card-bottom">
             <h2>
@@ -61,7 +34,7 @@ export default function Card() {
                 pull="left"
                 className="icon"
               />
-              {user.location}
+              {props.info.location}
             </h2>
             <h2>
               <FontAwesomeIcon
@@ -69,7 +42,7 @@ export default function Card() {
                 pull="left"
                 className="icon"
               />
-              {user.blog}
+              {props.info.blog}
             </h2>
             <h2>
               <FontAwesomeIcon
@@ -77,7 +50,7 @@ export default function Card() {
                 pull="left"
                 className="icon"
               />
-              @{user.twitter_username}
+              @{props.info.twitter_username}
             </h2>
           </div>
         </div>
