@@ -23,7 +23,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2rem;
   margin: 1rem;
   border-radius: 1rem;
 }
@@ -144,17 +144,17 @@ a:hover {
 
 @media (min-width: 992px) {
   body {
-    padding: 0rem 15rem;
+    padding: 0rem 18rem;
   }
 }
 
 @media (min-width: 1200px) {
   body {
-    padding: 0rem 25rem;
+    padding: 0rem 31rem;
   }
 }
 @media (min-width: 2200px) {
   body {
-    padding: 0rem 50rem;
+    padding: 0rem 65rem;
   }
 }
