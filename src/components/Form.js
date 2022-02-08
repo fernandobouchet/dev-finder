@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Form() {
   const [user, setUser] = React.useState({});
@@ -32,13 +33,20 @@ export default function Form() {
   return (
     <>
       <form id="form">
-        <input
-          id="search-input"
-          type="input"
-          name="button-input"
-          placeholder="Github Username"
-          autoComplete="off"
-        ></input>
+        <div>
+          <FontAwesomeIcon
+            icon="fa-solid fa-magnifying-glass"
+            size="lg"
+            className="icon"
+          />
+          <input
+            id="search-input"
+            type="input"
+            name="button-input"
+            placeholder="Github Username"
+            autoComplete="off"
+          ></input>
+        </div>
         <button type="submit" id="button-input" onClick={handleSearch}>
           Search
         </button>
