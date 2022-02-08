@@ -23,9 +23,18 @@ export default function Card(props) {
             </div>
           </div>
           <div className="card-center">
-            <h2>Repos {props.info.public_repos}</h2>
-            <h2>Followers {props.info.followers}</h2>
-            <h2>Following {props.info.following}</h2>
+            <div>
+              <h2>Repos</h2>
+              <h2>{props.info.public_repos}</h2>
+            </div>
+            <div>
+              <h2>Followers</h2>
+              <h2> {props.info.followers}</h2>
+            </div>
+            <div>
+              <h2>Following</h2>
+              <h2>{props.info.following}</h2>
+            </div>
           </div>
           <div className="card-bottom">
             <h2>
