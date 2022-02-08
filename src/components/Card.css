@@ -137,3 +137,26 @@ a:hover {
 .not-available {
   color: #161b22;
 }
+
+@media (min-width: 768px) {
+  body {
+    padding: 0rem 10rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0rem 15rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    padding: 0rem 25rem;
+  }
+}
+@media (min-width: 2200px) {
+  body {
+    padding: 0rem 50rem;
+  }
+}
