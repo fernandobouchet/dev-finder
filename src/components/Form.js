@@ -22,7 +22,6 @@ export default function Form() {
   function handleSearch(e) {
     const userName = document.getElementById("search-input").value;
     e.preventDefault();
-    console.log(userName);
     if (userName !== "") {
       getInfo(userName);
     } else {

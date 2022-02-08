@@ -40,44 +40,59 @@ export default function Card(props) {
             </div>
           </div>
           <div className="card-bottom">
-            <h2>
+            <div>
               <FontAwesomeIcon
-                icon="fa-solid fa-location-dot"
+                icon="fa-solid fa-location-arrow"
                 pull="left"
                 className="icon"
+                size="2x"
               />
-              {props.info.location}
-            </h2>
-            <a
-              href={props.info.blog}
-              target="_blank"
-              rel="noreferrer"
-              className="bottom-link"
-            >
-              <h2>
-                <FontAwesomeIcon
-                  icon="fa-solid fa-link"
-                  pull="left"
-                  className="icon"
-                />
-                {props.info.blog}
-              </h2>
-            </a>
-            <a
-              href={`https://twitter.com/${props.info.twitter_username}`}
-              target="_blank"
-              rel="noreferrer"
-              className="bottom-link"
-            >
-              <h2>
-                <FontAwesomeIcon
-                  icon="fa-brands fa-twitter"
-                  pull="left"
-                  className="icon"
-                />
-                @{props.info.twitter_username}
-              </h2>
-            </a>
+              {props.info.location ? (
+                <h2>{props.info.location}</h2>
+              ) : (
+                <h2 className="not-available">Not Available</h2>
+              )}
+            </div>
+            <div>
+              <FontAwesomeIcon
+                icon="fa-solid fa-link"
+                pull="left"
+                className="icon"
+                size="2x"
+              />
+              {props.info.blog ? (
+                <a
+                  href={props.info.blog}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bottom-link"
+                >
+                  <h2>{props.info.blog}</h2>
+                </a>
+              ) : (
+                <h2 className="not-available">Not Available</h2>
+              )}
+            </div>
+            <div>
+              <FontAwesomeIcon
+                icon="fa-brands fa-twitter"
+                pull="left"
+                className="icon"
+                size="2x"
+              />
+              {props.info.twitter_username ? (
+                <a
+                  href={`https://twitter.com/${props.info.twitter_username}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bottom-link"
+                >
+                  <h2>{`@${props.info.twitter_username}`}</h2>
+                </a>
+              ) : (
+                <h2 className="not-available">Not Available</h2>
+              )}
+            </div>
           </div>
         </div>
       )}
