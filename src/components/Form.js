@@ -21,9 +21,13 @@ export default function Form() {
 
   function handleSearch(e) {
     const userName = document.getElementById("search-input").value;
-    console.log(e.target.value);
     e.preventDefault();
-    getInfo(userName);
+    console.log(userName);
+    if (userName !== "") {
+      getInfo(userName);
+    } else {
+      alert("Please enter the github username to search");
+    }
   }
 
   return (
