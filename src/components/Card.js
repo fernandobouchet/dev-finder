@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Card(props) {
   let date = format(parseISO(props.info.created_at), "PP");
-  console.log(date);
+
   return (
     <>
       {props.info !== undefined && (
@@ -18,7 +18,7 @@ export default function Card(props) {
               ></img>
             </div>
             <div>
-              <h1>{props.info.name}</h1>
+              <h2 id="main-name">{props.info.name}</h2>
               <a href={props.info.html_url} target="_blank" rel="noreferrer">
                 <h2>@{props.info.login}</h2>
               </a>
@@ -48,22 +48,36 @@ export default function Card(props) {
               />
               {props.info.location}
             </h2>
-            <h2>
-              <FontAwesomeIcon
-                icon="fa-solid fa-link"
-                pull="left"
-                className="icon"
-              />
-              {props.info.blog}
-            </h2>
-            <h2>
-              <FontAwesomeIcon
-                icon="fa-brands fa-twitter"
-                pull="left"
-                className="icon"
-              />
-              @{props.info.twitter_username}
-            </h2>
+            <a
+              href={props.info.blog}
+              target="_blank"
+              rel="noreferrer"
+              className="bottom-link"
+            >
+              <h2>
+                <FontAwesomeIcon
+                  icon="fa-solid fa-link"
+                  pull="left"
+                  className="icon"
+                />
+                {props.info.blog}
+              </h2>
+            </a>
+            <a
+              href={`https://twitter.com/${props.info.twitter_username}`}
+              target="_blank"
+              rel="noreferrer"
+              className="bottom-link"
+            >
+              <h2>
+                <FontAwesomeIcon
+                  icon="fa-brands fa-twitter"
+                  pull="left"
+                  className="icon"
+                />
+                @{props.info.twitter_username}
+              </h2>
+            </a>
           </div>
         </div>
       )}
