@@ -1,8 +1,11 @@
 import React from "react";
 import "./Card.css";
+import { format, parseISO } from "date-fns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Card(props) {
+  let date = format(parseISO(props.info.created_at), "PP");
+  console.log(date);
   return (
     <>
       {props.info !== undefined && (
@@ -19,7 +22,7 @@ export default function Card(props) {
               <a href={props.info.html_url} target="_blank" rel="noreferrer">
                 <h2>@{props.info.login}</h2>
               </a>
-              <h2>Joined {props.info.created_at}</h2>
+              <h2>Joined {date}</h2>
             </div>
           </div>
           <div className="card-center">
