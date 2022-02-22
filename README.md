@@ -17,7 +17,7 @@ Design was based from the following [Frontend Mentor challenge](https://www.fron
 
 ```
 git clone https://github.com/fernandobouchet/dev-finder
-cd travel-journal
+cd dev-finder
 npm install
 npm start
 ```
