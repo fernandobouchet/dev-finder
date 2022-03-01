@@ -10,7 +10,7 @@ Design was based from the following [Frontend Mentor challenge](https://www.fron
 
 ## Screenshots
 
-![App Screenshot](https://github.com/fernandobouchet/dev-finder/blob/main/project_preview.png?raw=true)
+![App Screenshot](https://github.com/fernandobouchet/dev-finder/blob/main/dev-finder_preview.jpg?raw=true)
 
 
 ## Getting started
