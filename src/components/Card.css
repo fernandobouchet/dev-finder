@@ -42,6 +42,7 @@ form {
 
 .card-top {
   gap: 1rem;
+  justify-content: center;
 }
 
 .card-bottom {
@@ -134,6 +135,27 @@ a:hover {
 
 .not-available {
   color: #161b22;
+}
+
+@media (max-width: 480px) {
+  #main-name {
+    font-size: 1rem;
+  }
+  img {
+    width: 6rem;
+  }
+
+  .card-center {
+    gap: 1rem;
+    width: 270px;
+  }
+
+  .card-bottom {
+    text-align: initial;
+    width: 270px;
+    font-size: 0.5rem;
+    padding-left: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
